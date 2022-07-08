@@ -22,4 +22,6 @@ public interface StudentRepository extends JpaRepository<Student,Integer> {
             "                       where f.id = :id)\n" +
             "        group by group_name", nativeQuery = true)
     List<SearchByFacultyIdDto> searchByFacultyId(@Param("id") Integer id);
+
+
 }

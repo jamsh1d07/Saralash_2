@@ -3,16 +3,20 @@ package uz.saralash.payload;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
+import uz.saralash.repository.StudentRepository;
+
+import java.util.List;
 
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
-
-public class SearchByFacultyIdDto {
+public interface SearchByFacultyIdDto {
 
 
-    private String name;
+    @Value("#{target.group_name}")
+    String getGroupName();
 
-    private Integer count;
+    @Value("#{target.counter}")
+    Integer getCounter();
+
 }
